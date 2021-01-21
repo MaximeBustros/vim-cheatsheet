@@ -1,0 +1,130 @@
+# Cursor Movement
+k -> move cursor up
+j -> move cursor down
+l -> move cursor right
+h -> move cursor left
+
+# Word movement 
+w -> go to start of next word
+b -> go to start of previous word
+
+# Document movement
+gg -> go to start of the document
+G -> go to the last line of a document
+
+# Line movement
+$ -> go to end of line
+^ -> go to start of line
+A -> go to end of line and start appending
+
+# Search commands
+/ -> search for next occurence of regex
+? -> search for previous occurence of regex
+n -> go next
+N -> go previous
+f -> search for next occurence of character
+t -> same as f but places cursor before the character
+F -> same as f but in backward direction
+T -> same as t but in backward direction
+; -> repeat f search
+, -> repeat f in backward direction
+* -> allows us to search with / the word under cursor
+
+# Switching modes commands
+v -> go to visual mode
+i -> go to editing mode
+o -> create a new line and go to editing mode
+
+# Normal Mode commands
+x -> delete a letter
+d -> delete followed by a movement command
+c -> same as d but goes into editing mod
+
+# Copy / Pasting
+y -> equivalent to copy
+dd -> deletes current line and copies to clipboard (cut)
+p -> paste
+
+# Undo / Redo
+u 	 -> undo command
+<C-r> -> redo command
+
+# Common combinations
+dw -> delete next word
+dap -> delete whole paragraph
+vit -> select content in a tag
+daw -> delete word under cursor
+gg=G -> go to start of file and indent till end of file
+
+# Compound commands (commands that do more than one thing)
+C -> c$ delete from cursor to end of line and replace
+S -> Replace whole line
+s -> cl
+S -> ^C
+A -> go to end of line and start appending
+I -> go to start of line and start inserting
+o -> add a new line and start appending
+O -> add a previous empty line and start appending
+
+# Prompts
+: -> use command line mode to execute an Ex command
+/ -> use command-line mode to perform a forward search
+? -> use command-line mode to perform a backward search
+= -> use command-line mode to evaluate a vim script expression
+
+# Working with numbers
+Ctrl-a -> increment number under cursor or first match on line
+Ctrl-x -> decrement number under cursor or first match on line
+Can be used with numbers for incrementing / decrementing by more than 1
+
+# Information
+:version -> information about current vim build
+
+# Indentation
+>G -> indents from current line up until last line of file
+
+# Operators
+c -> change
+d -> delete
+y -> yank
+g~ -> swap case
+gu -> make lowercase
+gU -> make uppercase
+> -> shift right
+< -> shift left
+= -> autoindent
+>> -> tab right
+<< -> tab left
+! -> filter {motion} lines through an external program
+Note: when running the same operator in succession 
+operator acts on current line.
+Attention!: gugu and gUgU and g~g~ can be replaced by guu, gUU and g~~
+
+# Insert mode commands
+ctrl-h -> deletes a single character
+ctrl-w -> deletes back one word
+ctrl-u -> deletes back to start of line
+ctrl-r<register> -> pastes from register in insert mode
+ctrl-r-p<register> -> pastes from register and fix unintended indentation
+ctrl-o -> goes into normal mode for a single command
+ctrl+[ or ESC -> goes into normal mode
+ctrl-r + = -> evaluates following calculation ex: =10*5 returns 50
+ctrl-v<number> -> convert numeric code to character
+ctrl-v+u<hex> -> for unicode
+ga -> gets numeric code for any character (normal mode)
+
+# Replace Mode
+R -> go into replace mode
+insert -> switch between replace and insert mode
+gR -> go into virtual replace mode (replace mode but treats tab as multiple characters)
+(useful for replacing values in configuration files with tabs)
+r or gr -> single character replace mode
+
+# Visual Mode
+v -> go into visual mode
+V -> go into line wise visual mode
+ctrl-v -> go into visual block mode
+o -> toggle free end section
+U -> toggle to uppercase
+u -> toggle to lowercase
+
